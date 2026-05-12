@@ -5,7 +5,7 @@ import path from 'path';
 
 // 1. Load the proto file
         //const PROTO_PATH = path.resolve(__dirname, './service.proto');
-        const PROTO_PATH = path.resolve("", './service.proto');
+        const PROTO_PATH = path.resolve("", './schemas/service.proto');
         const packageDefinition = protoLoader.loadSync(PROTO_PATH, {
                 keepCase: true,
                 longs: String,
@@ -16,7 +16,7 @@ import path from 'path';
 
         const protoDescriptor = grpc.loadPackageDefinition(packageDefinition) as any;
         const MyService = protoDescriptor.User;
-
+ 
 test.describe('gRPC API Tests', () => {
   let client: any;
 
