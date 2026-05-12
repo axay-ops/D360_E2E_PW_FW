@@ -1,0 +1,172 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Generated schema for Root",
+  "type": "object",
+  "properties": {
+    "_embedded": {
+      "type": "object",
+      "properties": {
+        "logMessageList": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "depotId": {
+                "type": "string"
+              },
+              "inout": {
+                "type": "string"
+              },
+              "requestDate": {
+                "type": "string"
+              },
+              "responseDate": {
+                "type": "string"
+              },
+              "chargerId": {
+                "type": "string"
+              },
+              "messageType": {
+                "type": "string"
+              },
+              "status": {
+                "type": "string"
+              },
+              "keyAttributes": {
+                "type": "object",
+                "properties": {},
+                "required": []
+              },
+              "requestMessage": {
+                "type": "string"
+              },
+              "responseMessage": {
+                "type": "string"
+              },
+              "transactionId": {},
+              "idTag": {},
+              "errorCode": {},
+              "vendorErrorCode": {},
+              "connectorId": {},
+              "createdDate": {
+                "type": "string"
+              },
+              "updatedDate": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "depotId",
+              "inout",
+              "requestDate",
+              "responseDate",
+              "chargerId",
+              "messageType",
+              "status",
+              "keyAttributes",
+              "requestMessage",
+              "responseMessage",
+              "transactionId",
+              "idTag",
+              "errorCode",
+              "vendorErrorCode",
+              "connectorId",
+              "createdDate",
+              "updatedDate"
+            ]
+          }
+        }
+      },
+      "required": [
+        "logMessageList"
+      ]
+    },
+    "_links": {
+      "type": "object",
+      "properties": {
+        "first": {
+          "type": "object",
+          "properties": {
+            "href": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "href"
+          ]
+        },
+        "self": {
+          "type": "object",
+          "properties": {
+            "href": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "href"
+          ]
+        },
+        "next": {
+          "type": "object",
+          "properties": {
+            "href": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "href"
+          ]
+        },
+        "last": {
+          "type": "object",
+          "properties": {
+            "href": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "href"
+          ]
+        }
+      },
+      "required": [
+        "first",
+        "self",
+        "next",
+        "last"
+      ]
+    },
+    "page": {
+      "type": "object",
+      "properties": {
+        "size": {
+          "type": "number"
+        },
+        "totalElements": {
+          "type": "number"
+        },
+        "totalPages": {
+          "type": "number"
+        },
+        "number": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "size",
+        "totalElements",
+        "totalPages",
+        "number"
+      ]
+    }
+  },
+  "required": [
+    "_embedded",
+    "_links",
+    "page"
+  ]
+}

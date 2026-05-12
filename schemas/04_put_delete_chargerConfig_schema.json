@@ -1,0 +1,75 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Generated schema for Root",
+  "type": "object",
+  "properties": {
+    "status": {},
+    "errorMessage": {},
+    "data": {
+      "type": "object",
+      "properties": {
+        "systemDefaults": {},
+        "depotDefaults": {},
+        "chargerDefaults": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "depotId": {
+                "type": "string"
+              },
+              "chargerId": {
+                "type": "string"
+              },
+              "chargerName": {
+                "type": "string"
+              },
+              "priority": {},
+              "deleteProfile": {},
+              "connectorData": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "connectorId": {
+                      "type": "number"
+                    },
+                    "chargingRate": {
+                      "type": "number"
+                    },
+                    "chargingUnit": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "connectorId",
+                    "chargingRate",
+                    "chargingUnit"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "depotId",
+              "chargerId",
+              "chargerName",
+              "priority",
+              "deleteProfile",
+              "connectorData"
+            ]
+          }
+        }
+      },
+      "required": [
+        "systemDefaults",
+        "depotDefaults",
+        "chargerDefaults"
+      ]
+    }
+  },
+  "required": [
+    "status",
+    "errorMessage",
+    "data"
+  ]
+}

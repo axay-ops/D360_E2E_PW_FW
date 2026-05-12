@@ -1,0 +1,45 @@
+{
+  "name": "d360_e2e_pw_fw",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:dev": "npx cross-env ENV=dev npx playwright test",
+    "test:qa": "npx cross-env ENV=qa npx playwright test",
+    "test:stage": "npx cross-env ENV=stage npx playwright test",
+    "test:qa:login": "npx dotenvx run --env ENV=qa -- npx playwright test ./loginpage.spec.ts",
+    "test:qa:smoke": "npx cross-env ENV=qa npx playwright test --grep '@smoke'",
+    "test:qa:regression": "npx cross-env ENV=qa npx playwright test --grep '@regression'",
+    "test:qa:registration": "npx cross-env ENV=qa npx playwright test --grep '@registration'",
+    "test:qa:allure": "npx cross-env ENV=qa npx playwright test ./loginpage.spec.ts && npx allure generate allure-results --clean -o allure-report && npx allure open allure-report",
+    "allure:generate": "npx allure generate allure-results --clean -o allure-report",
+    "allure:open": "npx allure open allure-report",
+    "lint": "eslint . --ext .ts,.js --report-unused-disable-directives --max-warnings 0",
+    "lint:fix": "eslint . --ext .ts,.js --fix",
+    "lint:report": "eslint . --ext .ts,.js -f html -o eslint-report/index.html || true",
+    "lint:report:json": "eslint . --ext .ts,.js -f json -o eslint-report/eslint-results.json || true",
+    "Debug:mode": "npx cross-env DEBUG=pw:api npx playwright test ./01_gorest.spec.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "@playwright/test": "^1.59.1",
+    "@types/node": "^25.6.0",
+    "allure-commandline": "^2.38.1",
+    "allure-playwright": "^3.7.1",
+    "csv-parse": "^6.2.1",
+    "playwright-html-reporter": "^0.1.11",
+    "varadi": "github:yoggit/varadi"
+  },
+  "dependencies": {
+    "@dotenvx/dotenvx": "^1.62.0",
+    "@grpc/grpc-js": "^1.14.3",
+    "@grpc/proto-loader": "^0.8.0",
+    "ajv": "^8.18.0",
+    "jsonpath-plus": "^10.4.0",
+    "mongodb": "^7.2.0"
+  }
+}

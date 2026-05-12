@@ -1,0 +1,141 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Generated schema for Root",
+  "type": "object",
+  "properties": {
+    "depotId": {
+      "type": "string"
+    },
+    "chargerId": {
+      "type": "string"
+    },
+    "model": {
+      "type": "string"
+    },
+    "manufacturer": {
+      "type": "string"
+    },
+    "firmwareVersion": {
+      "type": "string"
+    },
+    "serialNumber": {
+      "type": "string"
+    },
+    "chargerName": {
+      "type": "string"
+    },
+    "maxPower": {
+      "type": "number"
+    },
+    "deratedPower": {
+      "type": "number"
+    },
+    "chargerStatus": {
+      "type": "string"
+    },
+    "chargerLastUpdated": {
+      "type": "string"
+    },
+    "connectorDataMap": {
+      "type": "object",
+      "properties": {
+        "0": {
+          "type": "object",
+          "properties": {
+            "status": {
+              "type": "object",
+              "properties": {
+                "latestStatus": {
+                  "type": "string"
+                },
+                "errorCode": {
+                  "type": "string"
+                },
+                "vendorErrorCode": {},
+                "lastUpdated": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "latestStatus",
+                "errorCode",
+                "vendorErrorCode",
+                "lastUpdated"
+              ]
+            },
+            "latestTransaction": {},
+            "parkingSpaceId": {},
+            "ssConnectorId": {}
+          },
+          "required": [
+            "status",
+            "latestTransaction",
+            "parkingSpaceId",
+            "ssConnectorId"
+          ]
+        },
+        "1": {
+          "type": "object",
+          "properties": {
+            "status": {
+              "type": "object",
+              "properties": {
+                "latestStatus": {
+                  "type": "string"
+                },
+                "errorCode": {
+                  "type": "string"
+                },
+                "vendorErrorCode": {},
+                "lastUpdated": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "latestStatus",
+                "errorCode",
+                "vendorErrorCode",
+                "lastUpdated"
+              ]
+            },
+            "latestTransaction": {},
+            "parkingSpaceId": {
+              "type": "string"
+            },
+            "ssConnectorId": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "status",
+            "latestTransaction",
+            "parkingSpaceId",
+            "ssConnectorId"
+          ]
+        }
+      },
+      "required": [
+        "0",
+        "1"
+      ]
+    },
+    "ssChargerId": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "depotId",
+    "chargerId",
+    "model",
+    "manufacturer",
+    "firmwareVersion",
+    "serialNumber",
+    "chargerName",
+    "maxPower",
+    "deratedPower",
+    "chargerStatus",
+    "chargerLastUpdated",
+    "connectorDataMap",
+    "ssChargerId"
+  ]
+}
