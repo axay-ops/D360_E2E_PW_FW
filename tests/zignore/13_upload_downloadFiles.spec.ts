@@ -15,6 +15,9 @@
 
 
 import { test, expect, Locator, Page } from '@playwright/test';
+import fs from 'fs';
+import path from 'path';
+import {parse} from 'csv-parse/sync'; 
 
 
 test ('Single File Upload and Remove', async ({ page }) => {
@@ -60,10 +63,35 @@ test ('File Download', async ({ page }) => {
 
     const [filedownload] = await Promise.all([
             page.waitForEvent('download'),
-            await page.locator('#custom-download-btn').click()
+            await page.locator('#exportBtn').click()
     ])
-    filedownload.saveAs(''); 
-    filedownload.suggestedFilename();
+   
+    // during downloading, expect failure to be null.
+    expect(await filedownload.failure()).toBeNull(); 
 
+    // get file name
+    const filename = filedownload.suggestedFilename();
+    console.log(filename); 
+
+    // save file to sepecific path
+    const filepath = './downloads/'+filedownload.suggestedFilename()
+    filedownload.saveAs(filepath);
+
+
+    // Verify file exists
+    expect(fs.existsSync(filepath)).toBeTruthy();
+
+    // verify filesize 
+    const filesize= fs.statSync(filepath).size;
+    expect(filesize).toBeGreaterThan(0);
+
+    //read file
+    let csvcontent = fs.readFileSync(filepath,'utf8');
+
+    const Userdata = parse(csvcontent, {
+        columns: true,
+        skip_empty_lines: true 
+        });
+        
 });
 
