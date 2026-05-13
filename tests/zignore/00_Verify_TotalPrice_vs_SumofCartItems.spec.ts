@@ -8,7 +8,7 @@
         function sumPrices(...prices: number[]): number {
             return prices.reduce((total, price) => total + price, 0);
         }
-
+  
 test('Verify total price matches sum of items', async ({ page }) => {
     await page.goto('https://example.com');
 
