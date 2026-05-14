@@ -315,7 +315,9 @@ test.describe('CMS Overview: cm-charger-dashboard API',
         expect(errorBody).toBeDefined();
     })
 
-    test.skip('TC06: Verify API response matches MongoDB using projection (Object Comparison)', {tag: ['@regression']}, async ({request, mongotest}) => {
+
+    
+    test.skip('TC10: Verify API response matches MongoDB using projection (Object Comparison)', {tag: ['@regression']}, async ({request, mongotest}) => {
 
         // Step 1: Fetch data from API
         const response = await request.get(`${apiFullUrl}`, {
