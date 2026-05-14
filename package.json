@@ -31,6 +31,7 @@
     "@types/pg": "^8.20.0",
     "allure-commandline": "^2.38.1",
     "allure-playwright": "^3.7.1",
+    "classy-reporter": "^2.0.0",
     "csv-parse": "^6.2.1",
     "msw": "^2.14.6",
     "playwright-html-reporter": "^0.1.11"

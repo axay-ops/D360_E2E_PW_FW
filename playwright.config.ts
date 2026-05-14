@@ -65,7 +65,7 @@ export default defineConfig({
     {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
-      dependencies: ['setup'] 
+       //dependencies: ['setup'] 
     },
 
     // {
@@ -93,10 +93,10 @@ export default defineConfig({
     //   name: 'Microsoft Edge',
     //   use: { ...devices['Desktop Edge'], channel: 'msedge' },
     // },
-    // {
-    //   name: 'Google Chrome',
-    //   use: { ...devices['Desktop Chrome'], channel: 'chrome' },
-    // },
+    {
+      name: 'Google Chrome',
+      use: { ...devices['Desktop Chrome'], channel: 'chrome' },
+    }
   ],
 
   /* Run your local dev server before starting the tests */
@@ -155,11 +155,30 @@ export default defineConfig({
       minifyAssets: true,
       startServer: process.env.CI ? false : false
     }],
+    ['classy-reporter', { 
+      outputFolder: 'classy-reports',
+      trendsPeriodDays: 30,
+      //language: 'es' ,
+      outputFile: 'report.html',
+      title: 'Classy Reporter - D360 CMS E2E Report',
+      open: 'always'
+     }]
+
   //   ['varadi', {
   //    outputFolder: 'varadi-report',
   //    outputFile: 'index.html',
   //    title: 'Varadi - Namma Playwright Report'
   //  }]
+
+
+  
+  //   ['classy-reporter', { 
+  //     outputFolder: 'classy-reports',
+  //     outputFile: 'report.html',
+  //     title: 'Classy Reporter - D360 CMS E2E Report',
+  //     open: 'always'
+  //    }]
+
   ]
 
 });
