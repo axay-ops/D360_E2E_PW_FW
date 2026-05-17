@@ -44,10 +44,10 @@ export default defineConfig({
     viewport: { width: 1920, height: 1080 },                  //  viewport: { width: 1920, height: 1080 }  null=machine default full size.
     headless: process.env.CI ? true : (process.env.HEADLESS === 'true'),  // headless: !!process.env.CI,  false locally, true in CI
     testIdAttribute: 'custom-data-test-id', // default = data-testid 
-    httpCredentials: {
-      'username': 'admin',
-      'password': 'admin'
-    },
+    // httpCredentials: {
+    //   'username': 'admin',
+    //   'password': 'admin'
+    // },
   },
 
   metadata: {
@@ -65,7 +65,7 @@ export default defineConfig({
     {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
-       //dependencies: ['setup'] 
+      //dependencies: ['setup'] 
     },
 
     // {
@@ -92,11 +92,11 @@ export default defineConfig({
     // {
     //   name: 'Microsoft Edge',
     //   use: { ...devices['Desktop Edge'], channel: 'msedge' },
-    // },
-    {
-      name: 'Google Chrome',
-      use: { ...devices['Desktop Chrome'], channel: 'chrome' },
-    }
+    // // },
+    // {
+    //   name: 'Google Chrome',
+    //   use: { ...devices['Desktop Chrome'], channel: 'chrome' },
+    // }
   ],
 
   /* Run your local dev server before starting the tests */

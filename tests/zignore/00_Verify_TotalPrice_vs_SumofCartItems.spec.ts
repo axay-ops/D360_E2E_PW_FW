@@ -7,6 +7,8 @@
     // 1. Define a function using a REST parameter to collect any number of arguments
         function sumPrices(...prices: number[]): number {
             return prices.reduce((total, price) => total + price, 0);
+
+            
         }
   
 test('Verify total price matches sum of items', async ({ page }) => {
@@ -16,7 +18,7 @@ test('Verify total price matches sum of items', async ({ page }) => {
         const priceStrings = await page.locator('.price-tag').allTextContents();
 
     // 3. Convert to numbers (e.g., [10.5, 20.0])
-        const priceNumbers = priceStrings.map(str => parseFloat(str.replace('$', '')));
+        const priceNumbers = (priceStrings.map(str => parseFloat(str.replace('$', '')))).filter(i=> i>15);
 
     // 4. Use SPREAD (...) to pass the array into the REST parameter function
         const actualTotal = sumPrices(...priceNumbers);
